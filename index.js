@@ -47,12 +47,12 @@ let board = document.getElementById('board')
     if(snakeArr[0].y === food.y && snakeArr[0].x === food.x){
     foodsound.play();
     if(snakeArr.length > 1){
-        snakeArr.unshift({X: snakeArr[0].x + inputdir.x , y: snakeArr[0].y + inputdir.y});
+        snakeArr.unshift({x: snakeArr[0].x + inputdir.x , y: snakeArr[0].y + inputdir.y});
     }
     let a = 2;
     let b = 16;
-    food ={x : Math.round(a+(b-a)*Math.random()), y: Math.round(a+(b-a)*Math.random())}; 
-    board.removeChild(foodElement);
+    food ={x : Math.round(a + (b - a) * Math.random()), y: Math.round(a + (b - a) * Math.random())}; 
+    // board.removeChild(foodElement);
     board.classList.add('snake');
 }
    // moving snake 
