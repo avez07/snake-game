@@ -3,7 +3,7 @@ const foodsound = new Audio("/images/music/food.mp3");
 const gameover = new Audio("/images/music/gameover.mp3");
 const movesound = new Audio("/images/music/move.mp3");
 const music = new Audio("/images/music/music.mp3");
-let speed = 2;
+let speed = 5;
 let lastpainttime = 0
 let snakeArr = [
     {x: 13 , y:15}
@@ -22,23 +22,35 @@ let score = 0;
         game();
     }
 
-        console.log(ctime);
+        // console.log(ctime);
     }
 
-    function isCollide(sarr) {
-        return false;
+    function isCollide(snake) {
+        // if snake collide with his body 
+        for (let i = 1; i < snakeArr.length; i++) {
+            if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+                return true;
+            }
+            
+        }
+        if (snake[0].x > 18 || snake[0].x < 0 || snake[0].y > 18 || snake[0].y < 0 ) {
+            return true;
+        }else{
+            return false;
+        }
+        
     }
     function game(){
     let board = document.getElementById('board')
 
         // updating arrys
        if(isCollide(snakeArr)){
-        gameOverSound.play();
-        musicSound.pause();
+        gameover.play();
+        music.pause();
         inputdir =  {x: 0, y: 0}; 
         alert("Game Over. Press any key to play again!");
         snakeArr = [{x: 13, y: 15}];
-        musicSound.play();
+        // music.play();
         score = 0; 
     }
 
@@ -46,6 +58,7 @@ let score = 0;
         // updating the food 
         if(snakeArr[0].y === food.y && snakeArr[0].x === food.x){
         foodsound.play();
+        speed+= 0.2;
         
             snakeArr.unshift({x: snakeArr[0].x + inputdir.x , y: snakeArr[0].y + inputdir.y});
         
@@ -53,7 +66,6 @@ let score = 0;
         let b = 16;
         food ={x : Math.round(a + (b - a) * Math.random()), y: Math.round(a + (b - a) * Math.random())}; 
         
-        board.classList.add('snake');
     }
 
        // moving snake 
@@ -63,7 +75,8 @@ let score = 0;
     snakeArr[0].x += inputdir.x;
     snakeArr[0].y += inputdir.y;
 
-    // display the snake
+    
+
     // display the snake
     board.innerHTML = "";
 
@@ -87,14 +100,17 @@ let score = 0;
             foodElement.classList.add("food");
             board.appendChild(foodElement);
     }
+    let head = document.getElementsByClassName('head');
     window.requestAnimationFrame(main);
     window.addEventListener('keydown', e => {
         inputdir = { x: 0 , y:1} //game start
-        movesound.play();
+        // movesound.play();
+        music.play();
         switch (e.key) {
             case "ArrowUp":
                 inputdir.x = 0;
                 inputdir.y = -1;
+                head.style.rotate = "(180deg)";
 
 
                 break;
