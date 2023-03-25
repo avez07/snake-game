@@ -34,7 +34,7 @@
 
 }
 .body{
-    background-image: url('/images/snake-bg.jpg');
+    background-image: url('images/snake-bg.jpg');
     background-size: 100vw  100vh;
     min-height: 100vh;
     caret-color: transparent;
