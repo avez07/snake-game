@@ -2,17 +2,7 @@
     padding: 0;
     margin: 0;
 }
-body{
-    background-image: url('/images/snake-bg.jpg');
-    background-size: 100vw  100vh;
-    min-height: 100vh;
-    caret-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 #board{
     height: 90vh;
     width: 90vh;
@@ -42,6 +32,17 @@ body{
    background-position: center;
    background-size: cover;
 
+}
+.body{
+    background-image: url('/images/snake-bg.jpg');
+    background-size: 100vw  100vh;
+    min-height: 100vh;
+    caret-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 @media screen and (max-width: 768px) {
     
