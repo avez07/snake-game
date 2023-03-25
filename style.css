@@ -43,6 +43,47 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+.btn-left i ,.btn-up i ,.btn-down i,.btn-right i{
+    font-size: 60px;
+    color: #ffe77aff;
+    background-color: red;
+    border-radius: 50%;
+}
+.btn-left i:hover ,.btn-up i:hover ,.btn-down i:hover,.btn-right i:hover{
+   
+    font-size: 60px;
+    color: #ffe77aff;
+    background-color: red;
+    border-radius: 50%;
+    transform: scale(0.9);
+    transition: transform 0.2s ease;
+}
+.btn-left{
+    position: absolute;
+    left: 85px;
+    bottom: 74px;
+
+}
+.btn-up{
+    position: absolute;
+    bottom: 137px;
+    left: 147px;
+    
+}
+.btn-down{
+    position: absolute;
+    left: 148px;
+    bottom: 15px;
+    
+}
+.btn-right{
+    position: absolute;
+    right: 143px;
+    bottom: 74px;
+    
+    
 }
 @media screen and (max-width: 768px) {
     

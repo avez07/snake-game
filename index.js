@@ -104,7 +104,7 @@ let score = 0;
     window.requestAnimationFrame(main);
     window.addEventListener('keydown', e => {
         inputdir = { x: 0 , y:1} //game start
-        // movesound.play();
+        movesound.play();
         music.play();
         switch (e.key) {
             case "ArrowUp":
@@ -134,3 +134,26 @@ let score = 0;
                 break;
         }
     })
+    function controller(direction) {
+
+        inputdir = { x: 0 , y:1}
+        movesound.play();
+
+        if (direction === 'right') {
+            inputdir.x = 1;
+            inputdir.y = 0;
+        };
+        if (direction === 'left') {
+            inputdir.x = -1;
+            inputdir.y = 0;
+        };
+        if (direction === 'up') {
+            inputdir.x = 0;
+            inputdir.y = -1;
+        };
+        if (direction === 'down') {
+            inputdir.x = 0;
+            inputdir.y = 1;
+        };
+        
+    }
