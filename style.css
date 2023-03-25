@@ -51,7 +51,7 @@
     background-color: red;
     border-radius: 50%;
 }
-.btn-left i:hover ,.btn-up i:hover ,.btn-down i:hover,.btn-right i:hover{
+.btn-left i:active ,.btn-up i:active ,.btn-down i:active,.btn-right i:active{
    
     font-size: 60px;
     color: #ffe77aff;
@@ -80,7 +80,7 @@
 }
 .btn-right{
     position: absolute;
-    right: 143px;
+    left: 204px;
     bottom: 74px;
     
     
