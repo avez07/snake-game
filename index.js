@@ -159,33 +159,56 @@ let high = document.getElementById('highscore-s');
         }
     })
     function controller(direction) {
-
         inputdir = { x: 0 , y:1}
-       
-
-        if (direction === 'right') {
-            inputdir.x = 1;
-            inputdir.y = 0;
-            movesound.play();
-            music.play();
-        };
-        if (direction === 'left') {
-            inputdir.x = -1;
-            inputdir.y = 0;
-            movesound.play();
-            music.play();
-        };
-        if (direction === 'up') {
-            inputdir.x = 0;
-            inputdir.y = -1;
-            movesound.play();
-            music.play();
-        };
-        if (direction === 'down') {
-            inputdir.x = 0;
-            inputdir.y = 1;
-            movesound.play();
-            music.play();
-        };
         
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // This code will only execute on a mobile device
+            if (direction === 'right') {
+                inputdir.x = 1;
+                inputdir.y = 0;
+                movesound.play();
+                music.play();
+            };
+            if (direction === 'left') {
+                inputdir.x = -1;
+                inputdir.y = 0;
+                movesound.play();
+                music.play();
+            };
+            if (direction === 'up') {
+                inputdir.x = 0;
+                inputdir.y = -1;
+                movesound.play();
+                music.play();
+            };
+            if (direction === 'down') {
+                inputdir.x = 0;
+                inputdir.y = 1;
+                movesound.play();
+                music.play();
+            };
+        } else {
+            // This code will execute on a non-mobile device
+            if (direction === 'right') {
+                inputdir.x = 1;
+                inputdir.y = 0;
+                movesound.play();
+            };
+            if (direction === 'left') {
+                inputdir.x = -1;
+                inputdir.y = 0;
+                movesound.play();
+            };
+            if (direction === 'up') {
+                inputdir.x = 0;
+                inputdir.y = -1;
+                movesound.play();
+            };
+            if (direction === 'down') {
+                inputdir.x = 0;
+                inputdir.y = 1;
+                movesound.play();
+            };
+        }
     }
+    
