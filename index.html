@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container-fluid body">
+    <div class="container-fluid body .flex-md-column">
+        <div class="score">
+            <p>Score : <span id="score-s">0</span></p>
+        </div>
         <div id="board"></div>
-        <div class="controller mt-4">
+        <div class="controller mt-4 d-lg-none">
             <span class="btn-left" onclick="controller('left')"><i class="fa-solid fa-circle-chevron-left"></i></span>
             <span class="btn-up" onclick="controller('up')"><i class="fa-solid fa-circle-chevron-up"></i></span>
             <span class="btn-down" onclick="controller('down')"><i class="fa-solid fa-circle-chevron-down"></i></span>

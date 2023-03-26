@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Courgette&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -18,10 +19,11 @@
     background: linear-gradient(#f15a73 , #faca70);
     border-radius: 10px;
     border: 1px solid black;
-
+background-position: center;
 }
 .snake{
     background: linear-gradient(pink , wheat);
+    /* background-color: purple; */
     border-radius: 10px;
     border: 1px solid black;
     
@@ -43,10 +45,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    
 }
+
 .btn-left i ,.btn-up i ,.btn-down i,.btn-right i{
-    font-size: 60px;
+    font-size: 50px;
     color: #ffe77aff;
     background-color: red;
     border-radius: 50%;
@@ -62,34 +65,67 @@
 }
 .btn-left{
     position: absolute;
-    left: 85px;
-    bottom: 74px;
+    left: 98px;
+    bottom: 104px;
 
 }
 .btn-up{
     position: absolute;
-    bottom: 137px;
-    left: 147px;
+    bottom: 175px;
+    left: 160px;
     
 }
 .btn-down{
     position: absolute;
-    left: 148px;
-    bottom: 15px;
+    left: 161px;
+    bottom: 40px;
     
 }
 .btn-right{
     position: absolute;
-    left: 204px;
-    bottom: 74px;
+    left: 220px;
+    bottom: 100px;
     
     
+}
+.score{
+    position: absolute;
+    top: 0;
+    font-size: 40px;
+    font-family: 'Alkatra', cursive;
 }
 @media screen and (max-width: 768px) {
     
 #board{
     height: 50vh;
     width: 92vw;
+    margin-bottom: 160px;
+}
+.head{
+   
+    background: linear-gradient(#f15a73 , #faca70);
+    border-radius: 5px;
+    border: 1px solid black;
+background-position: center;
+}
+.body{
+    background-image: url('images/snake-bg.jpg');
+    background-size: 100vw  100vh;
+    min-height: 100vh;
+    caret-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    
+}
+.snake{
+    /* background: linear-gradient(pink , wheat); */
+    background-color: purple;
+    border-radius: 5px;
+    border: 1px solid black;
+    
 }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -98,5 +134,14 @@
         height: 60vh;
         width: 90vw;
         margin-top: 60px;
+    }
+}
+@media screen and (min-width: 992px) {
+    .score{
+        position: absolute;
+        left: 39px;
+        top: 32px;
+        font-size: 40px;
+        font-family: 'Alkatra', cursive;
     }
 }

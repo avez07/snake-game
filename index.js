@@ -3,14 +3,14 @@ const foodsound = new Audio("/images/music/food.mp3");
 const gameover = new Audio("/images/music/gameover.mp3");
 const movesound = new Audio("/images/music/move.mp3");
 const music = new Audio("/images/music/music.mp3");
-let speed = 5;
+let speed = 6;
 let lastpainttime = 0
 let snakeArr = [
     {x: 13 , y:15}
 ];
 let food = {x: 6 , y: 7};
 let score = 0;
-
+let show = document.getElementById('score-s')
 
 
     function main(ctime) {
@@ -48,10 +48,12 @@ let score = 0;
         gameover.play();
         music.pause();
         inputdir =  {x: 0, y: 0}; 
-        alert("Game Over. Press any key to play again!");
+        alert("Game Over. Press any key to play again!" +" "+ "your score is "+ " "+  score);
         snakeArr = [{x: 13, y: 15}];
         // music.play();
         score = 0; 
+        show.innerHTML = score;
+
     }
 
 
@@ -59,6 +61,9 @@ let score = 0;
         if(snakeArr[0].y === food.y && snakeArr[0].x === food.x){
         foodsound.play();
         speed+= 0.2;
+        score++;
+        show.innerHTML = score;
+
         
             snakeArr.unshift({x: snakeArr[0].x + inputdir.x , y: snakeArr[0].y + inputdir.y});
         
@@ -110,7 +115,6 @@ let score = 0;
             case "ArrowUp":
                 inputdir.x = 0;
                 inputdir.y = -1;
-                head.style.rotate = "(180deg)";
 
 
                 break;
