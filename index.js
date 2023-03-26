@@ -48,6 +48,7 @@ let high = document.getElementById('highscore-s');
        if(isCollide(snakeArr)){
         gameover.play();
         music.pause();
+        speed = 2;
         inputdir =  {x: 0, y: 0}; 
         alert("Game Over. Press any key to play again!" +" "+ "your score is "+ " "+  score);
         snakeArr = [{x: 13, y: 15}];
