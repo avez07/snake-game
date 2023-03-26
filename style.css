@@ -20,6 +20,8 @@
     border-radius: 10px;
     border: 1px solid black;
 background-position: center;
+transform: scale(1.04);
+
 }
 .snake{
     background: linear-gradient(pink , wheat);
@@ -56,11 +58,11 @@ background-position: center;
 }
 .btn-left i:active ,.btn-up i:active ,.btn-down i:active,.btn-right i:active{
    
-    font-size: 60px;
+    font-size: 48px;
     color: #ffe77aff;
     background-color: red;
     border-radius: 50%;
-    transform: scale(0.9);
+    transform: scale(1);
     transition: transform 0.2s ease;
 }
 .btn-left{
@@ -99,7 +101,7 @@ background-position: center;
 #board{
     height: 50vh;
     width: 92vw;
-    margin-bottom: 160px;
+    margin-bottom: 200px;
 }
 .head{
    
@@ -107,6 +109,7 @@ background-position: center;
     border-radius: 5px;
     border: 1px solid black;
 background-position: center;
+transform: scale(1.06);
 }
 .body{
     background-image: url('images/snake-bg.jpg');
@@ -127,13 +130,60 @@ background-position: center;
     border: 1px solid black;
     
 }
+.score{
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    font-size: 33px;
+    font-family: 'Alkatra', cursive;
+}
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
    
     #board{
         height: 60vh;
         width: 90vw;
-        margin-top: 60px;
+        margin-bottom: 200px;
+    }
+    .btn-left i ,.btn-up i ,.btn-down i,.btn-right i{
+        font-size: 100px;
+        color: #ffe77aff;
+        background-color: red;
+        border-radius: 50%;
+    }
+    .btn-left i:active ,.btn-up i:active ,.btn-down i:active,.btn-right i:active{
+       
+        font-size: 98px;
+        color: #ffe77aff;
+        background-color: red;
+        border-radius: 50%;
+        transform: scale(1);
+        transition: transform 0.2s ease;
+    }
+    .btn-left{
+        position: absolute;
+        left: 257px;
+        bottom: 104px;
+    
+    }
+    .btn-up{
+        position: absolute;
+        bottom: 195px;
+        left: 349px;
+        
+    }
+    .btn-down{
+        position: absolute;
+        left: 349px;
+        bottom: 10px;
+        
+    }
+    .btn-right{
+        position: absolute;
+        left: 440px;
+        bottom: 100px;
+        
+        
     }
 }
 @media screen and (min-width: 992px) {

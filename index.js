@@ -3,14 +3,15 @@ const foodsound = new Audio("/images/music/food.mp3");
 const gameover = new Audio("/images/music/gameover.mp3");
 const movesound = new Audio("/images/music/move.mp3");
 const music = new Audio("/images/music/music.mp3");
-let speed = 6;
+let speed = 2;
 let lastpainttime = 0
 let snakeArr = [
     {x: 13 , y:15}
 ];
 let food = {x: 6 , y: 7};
 let score = 0;
-let show = document.getElementById('score-s')
+let show = document.getElementById('score-s');
+let high = document.getElementById('highscore-s');
 
 
     function main(ctime) {
@@ -64,6 +65,15 @@ let show = document.getElementById('score-s')
         score++;
         show.innerHTML = score;
 
+        if (score > highscoreval) {
+            highscoreval = score;
+        localStorage.setItem('highscore', JSON.stringify(highscoreval));
+        high.innerHTML = highscoreval;
+
+
+            
+        }
+
         
             snakeArr.unshift({x: snakeArr[0].x + inputdir.x , y: snakeArr[0].y + inputdir.y});
         
@@ -106,6 +116,16 @@ let show = document.getElementById('score-s')
             board.appendChild(foodElement);
     }
     let head = document.getElementsByClassName('head');
+    let highscore = localStorage.getItem('highscore');
+
+    if (highscore === null) {
+        highscoreval = 0 ;
+        localStorage.setItem('highscore', JSON.stringify(highscoreval));
+        
+    } else{
+        highscoreval = JSON.parse(highscore)
+        high.innerHTML = highscore;
+    }
     window.requestAnimationFrame(main);
     window.addEventListener('keydown', e => {
         inputdir = { x: 0 , y:1} //game start
@@ -141,23 +161,31 @@ let show = document.getElementById('score-s')
     function controller(direction) {
 
         inputdir = { x: 0 , y:1}
-        movesound.play();
+       
 
         if (direction === 'right') {
             inputdir.x = 1;
             inputdir.y = 0;
+            movesound.play();
+            music.play();
         };
         if (direction === 'left') {
             inputdir.x = -1;
             inputdir.y = 0;
+            movesound.play();
+            music.play();
         };
         if (direction === 'up') {
             inputdir.x = 0;
             inputdir.y = -1;
+            movesound.play();
+            music.play();
         };
         if (direction === 'down') {
             inputdir.x = 0;
             inputdir.y = 1;
+            movesound.play();
+            music.play();
         };
         
     }
